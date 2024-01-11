@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cafe and Wifi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" href="{{url_for('static', filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename='assets/css/noscript.css')}}" /></noscript>
+
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="{{ url_for('index') }}">Cafe and Wifi <span>a place to work</span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="{{ url_for('index') }}">Welcome</a></li>
+							<li class="current"><a href="{{ url_for('add_cafe') }}">Add Cafe</a></li>
+							<li class="current"><a href="{{ url_for('remove_cafe') }}">Remove Cafe</a></li>
+
+							<li class="current"><a href="{{ url_for('contact') }}">Contact us</a></li>
+							<li><a href="{{ url_for('sign_up') }}" class="button primary">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>

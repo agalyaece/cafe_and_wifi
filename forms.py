@@ -1,5 +1,5 @@
 from wtforms import Form, StringField, SubmitField, PasswordField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo, URL
 
 
 # create from to register new user
@@ -18,3 +18,17 @@ class LoginForm(Form):
     password = PasswordField("Password", validators=[Length(min=3, max=25),
 
                                                      DataRequired(message="Please fill this field!")])
+
+
+class AddCafe(Form):
+    name = StringField("Cafe Name", validators=[DataRequired()])
+    map_url = StringField("Cafe location URL", validators=[DataRequired(), URL()])
+    img_url = StringField("Cafe Image URL", validators=[DataRequired(), URL()])
+    location = StringField("Cafe location", validators=[DataRequired()])
+    seats = StringField("Number of seats available", validators=[DataRequired()])
+    has_toilet= StringField("has toilets", validators=[DataRequired()])
+    has_sockets = StringField("has power sockets", validators=[DataRequired()])
+    has_wifi = StringField("has wi-fi", validators=[DataRequired()])
+    can_take_calls = StringField("can able to take calls", validators=[DataRequired()])
+    coffee_price = StringField("coffee price", validators=[DataRequired()])
+    submit = SubmitField("Add this cafe!")
